@@ -1,0 +1,175 @@
+.contenedor{             
+  width: 100%;
+  height: 100%;   
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content:center;
+}
+
+.fila {
+  display: flex;
+  flex-direction: row; 
+}
+
+.columna {    
+  padding: 0;  
+  margin: 2px;
+  width: 147px;
+  height: 200px;
+}
+
+.carta{
+  position: relative;   
+  width: 147px;
+  height: 200px;
+}
+
+.titulo{    
+  color: rgb(214, 0, 0);         
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 30px;  
+  font-size: 50px;
+  font-weight: bold;   
+  text-shadow:
+    -1px -1px 10px #000,
+    1px -1px 10px #000,
+    -1px 1px 10px #000,
+    1px 1px 10px #000;
+}
+
+.cara{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  backface-visibility: hidden;   /*La cara posterior está oculta, lo que efectivamente hace que el elemento sea invisible cuando se le da la espalda al usuario.*/
+  transition: .5s;  
+} 
+
+.frontal{
+  transform: rotateY(0deg);
+}
+
+.trasera{
+  transform: rotateY(180deg);
+}  
+
+.carta-img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* cómo se debe cambiar el tamaño del contenido para que se ajuste a su contenedo --> cover:  mantener su relación de aspecto mientras llena todo el cuadro de contenido del elemento. Si la relación de aspecto del objeto no coincide con la relación de aspecto de su cuadro, entonces el objeto se recortará para ajustarse.*/
+}
+
+.carta.volteada .frontal{
+  transform: rotateY(180deg);
+}
+
+.carta.volteada .trasera{
+  transform: rotateY(360deg);
+}
+
+.fin{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(214, 0, 0, 0.932);   
+  width: 300px;
+  height: 275px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 11px 11px rgb(0, 0, 0);
+  text-align: center;   
+  font-size: 30px;
+  font-weight: bold;   
+  text-shadow:
+    -1px -1px 10px #ffffff,
+    1px -1px 10px #ffffff,
+    -1px 1px 10px #ffffff,
+    1px 1px 10px #ffffff;
+    position: absolute;
+    z-index: 9999;  
+    margin-top: 50px;  
+}
+
+.boton{
+  color: white;
+  border: 1px solid black;
+  border-radius: 50px;
+  padding: 5px;
+  font-size: 20px; 
+  margin-top: 20px;
+  background: linear-gradient(135deg, rgb(0, 0, 0), rgb(102, 101, 101));
+  cursor: pointer;
+  box-shadow: 0px 0px 1px 5px rgb(255, 255, 255),
+              0px 0px 10px 5px rgb(255, 255, 255);
+  transition: box-shadow 0.5s ease, border 0.5s ease; 
+}
+
+.boton:hover{
+  box-shadow: 0px 0px 11px 5px rgb(75, 75, 75);   
+  border: 1px solid rgb(75, 75, 75);
+}
+
+.invisible{
+  display: none;
+}
+
+.tiempo{
+  color: rgb(214, 0, 0);           
+  text-align: center;
+  padding-top: 10px;    
+  font-size: 25px;
+  font-weight: bold;   
+  text-shadow:
+    -1px -1px 10px #000,
+    1px -1px 10px #000,
+    -1px 1px 10px #000,
+    1px 1px 10px #000;
+}
+
+@media only screen and (max-width: 620px) {
+  .titulo{   
+    padding-top: 50px;
+    padding-bottom: 50px;  
+    font-size: 40px;  
+  } 
+
+  .columna {    
+    width: 121px;
+    height: 165px;  
+  }
+  
+  .carta{
+    width: 121px;
+    height: 165px;  
+  }
+
+  .fin{
+    margin-top: 100px;  
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .titulo{   
+    padding-top: 100px;
+    padding-bottom: 50px;  
+    font-size: 40px;  
+  } 
+
+  .columna {    
+    width: 90px;
+    height: 122px;  
+  }
+  
+  .carta{
+    width: 90px;
+    height: 122px;  
+  }
+
+  .fin{
+    margin-top: 150px;  
+  }
+}
