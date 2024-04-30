@@ -1,0 +1,12 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Dancing Script', cursive;
+}
+
+body { 
+    font-family: sans-serif;    
+    background: #07bdb4;       
+    background: radial-gradient(#07bdb4 50%, #016b66 );
+}
